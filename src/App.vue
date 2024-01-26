@@ -1,8 +1,12 @@
 <template>
   <div v-html="title"></div>
   <ul>
-    <li v-for="(artist, index) in artists" :key="index"> {{ artist.name }}</li>
+    <li v-for="(artist, index) in artists" :key="index">
+      {{ artist.name }}
+      <button @click="removeArtist(artist.name)">x</button>
+    </li>
   </ul>
+  <p v-if="artists.length < 1">You have no artist in your list</p>
   <form @submit.prevent="addArtist">
     <input type="text" v-model.trim="newArtist" placeholder="Add new artist">
     <button type="submit">Add artist</button>
@@ -17,6 +21,9 @@ export default {
         this.artists.push({ name: this.newArtist })
         this.newArtist = ''
       }
+    },
+    removeArtist(artist) {
+      this.artists = this.artists.filter((a) => a.name != artist)
     }
   },
   data() {
