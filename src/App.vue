@@ -9,7 +9,7 @@
   <p v-if="artists.length < 1">You have no artist in your list</p>
   <form @submit.prevent="addArtist">
     <input type="text" v-model.trim="newArtist" placeholder="Add new artist">
-    <button type="submit">Add artist</button>
+    <button class="btn btn-primary" type="submit">Add artist</button>
   </form>
 </template>
 
