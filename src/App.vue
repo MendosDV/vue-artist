@@ -1,14 +1,16 @@
 <template>
   <AppHeader />
-  <ArtistsList />
+  <div class="container">
+    <ArtistsList />
+  </div>
 </template>
 
 <script>
-import AppHeader from './assets/AppHeader.vue'
-import ArtistsList from './assets/ArtistsList.vue'
+import AppHeader from './components/AppHeader.vue'
+import ArtistsList from './components/ArtistsList.vue'
 
 export default {
-  components: { AppHeader, ArtistsList },
+  components: { AppHeader, ArtistsList }
 }
 </script>
 
